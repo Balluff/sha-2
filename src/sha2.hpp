@@ -109,7 +109,7 @@ sha256_impl(const uint32_t* s, const uint8_t* data, uint64_t length)
         0x5b9cca4f, 0x682e6ff3, 0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208,
         0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2};
 
-    auto chunk = [&hash, &k](const uint8_t* chunk_data) {
+    auto chunk = [&](const uint8_t* chunk_data) {
         uint32_t w[64] = {0};
 
         for (int i = 0; i != 16; ++i) {
@@ -242,7 +242,7 @@ sha512_impl(const uint64_t* s, const uint8_t* data, uint64_t length)
         0x431d67c49c100d4c, 0x4cc5d4becb3e42b6, 0x597f299cfc657e2a,
         0x5fcb6fab3ad6faec, 0x6c44198c4a475817};
 
-    auto chunk = [&hash, &k](const uint8_t* chunk_data) {
+    auto chunk = [&](const uint8_t* chunk_data) {
         uint64_t w[80] = {0};
 
         for (int i = 0; i != 16; ++i) {
